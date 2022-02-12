@@ -10,8 +10,9 @@ from s3 import (upload_file,download_file,list_file)
 from resize import resize
 
 app = Flask(__name__)
-#csrf = CSRFProtect()
-#csrf.init_app(app) # Compliant
+app.config['SECRET_KEY'] = 'hello world!'
+csrf = CSRFProtect()
+csrf.init_app(app) # Compliant
 
 UPLOAD_FOLDER = "uploads"
 BUCKET = "ovasbucker"
