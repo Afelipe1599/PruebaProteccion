@@ -1,7 +1,7 @@
 """Module os"""
 import os
 
-from flask import (Flask,request,render_template,redirect, send_file,send_from_directory)
+from flask import (Flask,request,render_template,redirect, send_file)
 
 from flask_wtf.csrf import CSRFProtect
 
@@ -12,7 +12,7 @@ from resize import resize
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hello world!'
 csrf = CSRFProtect()
-csrf.init_app(app) # Compliant
+csrf.init_app(app)
 
 UPLOAD_FOLDER = "uploads"
 BUCKET = "ovasbucker"
@@ -35,13 +35,13 @@ def upload():
             upload_file(f"uploads/{file.filename}", BUCKET,file.filename)
     return redirect("/")
 
-@app.route('/download/<filename>', methods=['GET'])
-def download(filename):
+@app.route('/download', methods=['GET'])
+def download():
     "Function download"
+    filename=request.args.get('filename')
     if request.method == 'GET':
         output = download_file(filename, BUCKET)
     return send_file(output, as_attachment=True)
-    
 
 if __name__ == "__main__":
     app.run(debug=True,host="localhost",port="5000")

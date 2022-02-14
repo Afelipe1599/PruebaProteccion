@@ -1,5 +1,5 @@
-<!DOCTYPE >
-<html lang="en" xml:lang="en">
+<!DOCTYPE html lang="en">
+<html>
   <head >
     <title>Protección</title>
     <link rel="icon" href="/static/favicon.jpg">
@@ -20,9 +20,10 @@
             <h5 class="card-title text-center text">PRUEBA IMAGEN A4</h5>
             <hr>
             <div>
-              <h5 class="pt-2 text">Sube una imagen jpeg:</h5>
+              <h5 class="pt-2 text">Sube una imagen jpg:</h5>
               <form method="POST" action="/upload" enctype=multipart/form-data>
-                <input type="file" class="form-control" name="file" accept=".jpeg" multiple="">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <input type="file" class="form-control" name="file" accept=".jpg" multiple="">
                 <div class="col-12 text-center">
                   <input type=submit class="btn btn-outline-secondary mt-3" value=Cargar style="margin-left: auto;">
                 </div>                
@@ -35,7 +36,7 @@
               <ul class="list-group">
                 {% for item in contents %}
                   <li class="list-group-item">
-                    <a href="/download/{{ item.Key }}"> {{ item.Key }} </a>
+                    <a href="/download?filename={{ item.Key }}"> {{ item.Key }} </a>
                   </li>
                 {% endfor %}
               </ul>           
