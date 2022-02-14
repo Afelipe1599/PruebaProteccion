@@ -20,7 +20,9 @@ Se desarrollo una aplicacion en flask la cual fue dockerizada y desplegada en AW
 ![arquitectura.png](uploads/arquitectura.png)        
                 
 -  ### Para correr
-```docker compose up 
+```
+docker compose up 
+
 ```        
         
         
