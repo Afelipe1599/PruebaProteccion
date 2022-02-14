@@ -16,3 +16,9 @@ Se desarrollo una aplicacion en flask la cual fue dockerizada y desplegada en AW
         consiste en un webservice en flask que recibe una o muchas imagenes, estas imagenes son procesadas
         para cambiar su tamanio a A4 y se suben a un bucket en AWS S3 para estar disponibles para su
         descarga.
+        
+![arquitectura.png](uploads/arquitectura.png)        
+        
+        
+        
+        
