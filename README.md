@@ -9,3 +9,7 @@ Problema:
       2. Se debe aprovechar el máximo de la hoja A4
       3. Ninguna imagen debe ser agrandada en el proceso, solo encogida cuando corresponda
       4. La orientación de la página se debe definir a partir de la orientación de la imagen (Horizontal/Vertical)
+      
+Solucion:
+
+		Se desarrollo una aplicacion en flask la cual fue dockerizada y desplegada en AWS ECS la cual consiste en un webservice en flask que recibe una o muchas imagenes, estas imagenes son procesadas para cambiar su tamanio a A4 y se suben a un bucket en AWS S3 para estar disponibles para su descarga.
