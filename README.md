@@ -22,7 +22,6 @@ Se desarrollo una aplicacion en flask la cual fue dockerizada y desplegada en AW
 -  ### Para correr
 ```
 docker compose up 
-
 ```        
         
         
