@@ -27,6 +27,8 @@ Se desarrollo una aplicacion en flask la cual fue dockerizada y desplegada en AW
 ```
 docker compose up 
 ```        
+
+[Aplicacion desplegada](http://prueb-loadb-4c3s0l0je6ho-5f3094a6cd9f16ff.elb.us-east-2.amazonaws.com:5000/)
         
         
         
